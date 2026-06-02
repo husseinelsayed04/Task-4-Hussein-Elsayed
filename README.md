@@ -1,71 +1,61 @@
-# 💱 Currency Converter  (Java Project)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter Project</title>
+</head>
+<body>
 
-A simple **Currency Converter System** built using Java that simulates currency exchange operations such as converting between different currencies with validation and error handling.
-The project demonstrates core **Object-Oriented Programming (OOP)** principles 
+<h1>💱 Currency Converter (Java Project)</h1>
 
----
+<p>
+A simple Currency Converter System built using Java that simulates currency exchange operations such as converting between different currencies with validation and error handling.
+The project demonstrates core Object-Oriented Programming (OOP) principles.
+</p>
 
-## 🚀 Features
+<h2>🚀 Features</h2>
+<ul>
+    <li>Convert between supported currencies</li>
+    <li>Interactive menu-driven console system</li>
+    <li>Input validation (negative values, invalid currencies)</li>
+    <li>Handle unsupported currency pairs</li>
+    <li>Continuous loop until exit</li>
+    <li>Case-insensitive input support</li>
+</ul>
 
-* 💱 Convert between supported currencies
-* 📋 Interactive menu-driven console system
-* ⚠️ Input validation (negative values, invalid currencies)
-* ❌ Handle unsupported currency pairs
-* 🔁 Continuous loop until exit
-* 🔤 Case-insensitive input support
+<h2>🧠 OOP Concepts Used</h2>
+<ul>
+    <li>Encapsulation → CurrencyConverter hides rate logic internally</li>
+    <li>Abstraction → Using ConversionStrategy interface</li>
+    <li>Polymorphism → Different strategies can be used for conversion</li>
+    <li>Dependency Injection → Strategy injected into CurrencyConverter</li>
+    <li>Loose Coupling → Converter depends on interface not implementation</li>
+</ul>
 
----
-
-## 🧠 OOP Concepts Used
-
-This project demonstrates:
-
-* **Encapsulation** → CurrencyConverter hides rate logic internally
-* **Abstraction** → Using `ConversionStrategy` interface
-* **Polymorphism** → Different strategies can be used for conversion
-* **Dependency Injection** → Strategy injected into CurrencyConverter
-* **Loose Coupling** → Converter depends on interface not implementation
-
----
-
-## 🏗️ Project Structure
-
-```
+<h2>🏗️ Project Structure</h2>
+<pre>
 src/
-│
 ├── ConversionStrategy.java
 ├── CurrencyConverter.java
 ├── StandardConversionStrategy.java
 ├── Main.java
-```
+</pre>
 
----
+<h2>▶️ How to Run</h2>
+<p>
+Clone the repository, open it in IntelliJ IDEA or any Java IDE, then run <b>Main.java</b>.
+</p>
 
-## ▶️ How to Run
+<h2>🖥️ Program Flow Example</h2>
+<p>
+Menu System, Successful Conversion, Unsupported Currency Error, and Negative Amount Handling are demonstrated using attached screenshots in the repository.
+</p>
 
-1. Clone the repository:
+<h2>👨‍💻 Developer</h2>
+<p>
+Hussein Elsayed <br>
+Java Developer Intern
+</p>
 
-```bash
-git clone <repo-link>
-```
-
-2. Open the project in **IntelliJ IDEA** or any Java IDE.
-
-3. Run `Main.java`.
-
----
-
-🖥️ Program Flow Example
-📌 Menu System
-<img width="771" height="324" alt="Screenshot 2026-06-03 011427" src="https://github.com/user-attachments/assets/68f43f2c-01a3-4229-92f1-99e6ba53699b" />
-
-📌 Successful Conversion
-<img width="571" height="280" alt="Screenshot 2026-06-03 011438" src="https://github.com/user-attachments/assets/6a0fe200-b5e7-4590-8543-54a6c6fdf96b" />
-
-<img width="705" height="270" alt="Screenshot 2026-06-03 011447" src="https://github.com/user-attachments/assets/ac56d1ae-42a1-4735-9cec-5eb869d17547" />
-
-📌 Unsupported Currency Error
-<img width="623" height="282" alt="Screenshot 2026-06-03 011455" src="https://github.com/user-attachments/assets/564eabda-b814-4860-a981-60a3a02d7a85" />
-
-📌 Negative Amount Handling
-<img width="662" height="278" alt="Screenshot 2026-06-03 011502" src="https://github.com/user-attachments/assets/542e2c29-946a-4e45-aa48-d38d298765db" />
+</body>
+</html>

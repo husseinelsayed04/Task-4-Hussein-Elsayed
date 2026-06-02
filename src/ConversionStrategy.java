@@ -1,0 +1,5 @@
+public interface ConversionStrategy {
+
+    double convert(double amount, double rate);
+
+}

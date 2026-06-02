@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ATM System Project</title>
+    <title>Currency Converter Project</title>
 </head>
 
 <body>
 
-<h1>🏧 ATM System - Java OOP Project</h1>
+<h1>💱 Currency Converter - Java Project</h1>
 
 <p>
-A simple <b>ATM System</b> built using Java that simulates basic banking operations such as depositing money, withdrawing money, and checking account balance.
-The project demonstrates core <b>Object-Oriented Programming (OOP)</b> principles.
+A simple <b>Currency Converter System</b> built using Java that simulates currency exchange operations such as converting between different currencies with validation and error handling.
+The project demonstrates core <b>Object-Oriented Programming (OOP)</b> principles and <b>Strategy Design Pattern</b>.
 </p>
 
 ---
@@ -19,12 +19,13 @@ The project demonstrates core <b>Object-Oriented Programming (OOP)</b> principle
 <h2>🚀 Features</h2>
 
 <ul>
-    <li>Deposit money into account</li>
-    <li>Withdraw money with validation</li>
-    <li>Check current balance</li>
-    <li>Handle invalid inputs</li>
-    <li>Prevent overdraft (Insufficient balance check)</li>
-    <li>Menu-driven console interface</li>
+    <li>Convert between supported currencies</li>
+    <li>Interactive menu-driven console system</li>
+    <li>Input validation (negative values, invalid currencies)</li>
+    <li>Handle unsupported currency pairs</li>
+    <li>Continuous loop until exit</li>
+    <li>Case-insensitive input support</li>
+    <li>Strategy Pattern for flexible conversion logic</li>
 </ul>
 
 ---
@@ -32,11 +33,11 @@ The project demonstrates core <b>Object-Oriented Programming (OOP)</b> principle
 <h2>🧠 OOP Concepts Used</h2>
 
 <ul>
-    <li><b>Encapsulation</b> → balance is private inside BankAccount</li>
-    <li><b>Abstraction</b> → Using Account and ATMService interfaces</li>
-    <li><b>Polymorphism</b> → Using interface references instead of concrete classes</li>
-    <li><b>Dependency Injection</b> → Passing objects through constructors</li>
-    <li><b>Loose Coupling</b> → ATM depends on interfaces not implementations</li>
+    <li><b>Encapsulation</b> → CurrencyConverter hides rate logic internally</li>
+    <li><b>Abstraction</b> → Using ConversionStrategy interface</li>
+    <li><b>Polymorphism</b> → Different strategies can be used for conversion</li>
+    <li><b>Dependency Injection</b> → Strategy injected into CurrencyConverter</li>
+    <li><b>Loose Coupling</b> → Converter depends on interface not implementation</li>
 </ul>
 
 ---
@@ -46,12 +47,10 @@ The project demonstrates core <b>Object-Oriented Programming (OOP)</b> principle
 <pre>
 src/
 │
-├── Account.java
-├── BankAccount.java
-├── ATMService.java
-├── ATMServiceImpl.java
-├── ATM.java
-└── Main.java
+├── Main.java
+├── CurrencyConverter.java
+├── ConversionStrategy.java
+├── StandardConversionStrategy.java
 </pre>
 
 ---
@@ -68,49 +67,64 @@ src/
 
 <h2>🖥️ Program Flow Example</h2>
 
-<h3>📌 Check Balance</h3>
-<img src="https://github.com/user-attachments/assets/680281ad-42fb-4eff-bf08-8f4339f1991c">
+<h3>📌 Menu System</h3>
+<img src="https://github.com/user-attachments/assets/68f43f2c-01a3-4229-92f1-99e6ba53699b">
 
-<h3>📌 Deposit Money</h3>
-<img src="https://github.com/user-attachments/assets/0b8db777-084d-406b-96c8-b7285c1b10f7">
+<h3>📌 Successful Conversion</h3>
+<img src="https://github.com/user-attachments/assets/6a0fe200-b5e7-4590-8543-54a6c6fdf96b">
 
-<h3>📌 Withdraw Money</h3>
-<img src="https://github.com/user-attachments/assets/1c310c33-3993-4dec-8432-667fb03f5a61">
+<img src="https://github.com/user-attachments/assets/ac56d1ae-42a1-4735-9cec-5eb869d17547">
 
-<h3>📌 Insufficient Balance Handling</h3>
-<img src="https://github.com/user-attachments/assets/b8981e52-1576-4e38-a533-99f5e0a00fe3">
+<h3>📌 Unsupported Currency Error</h3>
+<img src="https://github.com/user-attachments/assets/564eabda-b814-4860-a981-60a3a02d7a85">
+
+<h3>📌 Negative Amount Handling</h3>
+<img src="https://github.com/user-attachments/assets/542e2c29-946a-4e45-aa48-d38d298765db">
 
 ---
 
 <h2>📌 Example Output</h2>
 
 <pre>
-===== ATM MENU =====
-1. Deposit
-2. Withdraw
-3. Check Balance
-4. Exit
+=== Currency Converter ===
+1. Convert Currency
+2. Show Supported Rates
+3. Exit
 
-Enter choice: 3
-Current Balance: 1000.0
+Choose option: 1
+From Currency: USD
+To Currency: EGP
+Amount: 100
 
-Enter choice: 1
-Enter amount: 4000
-Deposit successful.
+100.00 USD = 5000.00 EGP
 
-Enter choice: 3
-Current Balance: 5000.0
+---
 
-Enter choice: 2
-Enter amount: 5000
-Withdrawal successful.
+Choose option: 2
 
-Enter choice: 3
-Current Balance: 0.0
+Supported currencies:
+USD ↔ EGP
+EUR ↔ EGP
+EGP ↔ USD
+EGP ↔ EUR
 
-Enter choice: 2
-Enter amount: 1000
-Insufficient balance!
+---
+
+Choose option: 1
+From Currency: JPY
+To Currency: EGP
+Amount: 100
+
+Error: Currency conversion not supported
+
+---
+
+Choose option: 1
+From Currency: EGP
+To Currency: USD
+Amount: -1000
+
+Error: Amount must be positive
 </pre>
 
 ---
@@ -118,9 +132,10 @@ Insufficient balance!
 <h2>⭐ Future Improvements</h2>
 
 <ul>
-    <li>Add multiple accounts</li>
-    <li>Add login system (PIN)</li>
-    <li>Save data to file or database</li>
+    <li>Add more currencies dynamically</li>
+    <li>Fetch live exchange rates from API</li>
+    <li>Add transaction history</li>
+    <li>Save conversions to file/database</li>
     <li>GUI version (JavaFX / Swing)</li>
 </ul>
 

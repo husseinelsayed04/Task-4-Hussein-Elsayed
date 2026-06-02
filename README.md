@@ -11,7 +11,7 @@
 
 <p>
 A simple <b>Currency Converter System</b> built using Java that simulates currency exchange operations such as converting between different currencies with validation and error handling.
-The project demonstrates core <b>Object-Oriented Programming (OOP)</b> principles and <b>Strategy Design Pattern</b>.
+The project demonstrates core <b>Object-Oriented Programming (OOP).
 </p>
 
 ---

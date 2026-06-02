@@ -29,10 +29,29 @@ This project demonstrates:
 ---
 
 ## 🏗️ Project Structure
+
+```
 src/
 │
-├── Main.java
-├── CurrencyConverter.java
 ├── ConversionStrategy.java
+├── CurrencyConverter.java
 ├── StandardConversionStrategy.java
+├── Main.java
+```
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repository:
+
+```bash
+git clone <repo-link>
+```
+
+2. Open the project in **IntelliJ IDEA** or any Java IDE.
+
+3. Run `Main.java`.
+
+---
 

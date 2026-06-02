@@ -25,7 +25,6 @@ The project demonstrates core <b>Object-Oriented Programming (OOP).
     <li>Handle unsupported currency pairs</li>
     <li>Continuous loop until exit</li>
     <li>Case-insensitive input support</li>
-    <li>Strategy Pattern for flexible conversion logic</li>
 </ul>
 
 ---
